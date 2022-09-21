@@ -1,0 +1,3 @@
+enum AuthOptions {EMAIL, PHONE, GOOGLE, FACEBOOK}
+
+enum PageState {DEFAULT, LOADING, ERROR, SUCCESS}
