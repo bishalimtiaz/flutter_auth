@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/auth/constants/auth_text_style.dart';
 import 'package:flutter_auth/auth/widget/Input_text_field.dart';
 
-class UserNameTextField extends StatelessWidget {
-  final String? Function(String?)? userNameValidator;
-  final TextEditingController? userNameController;
+class FirstNameTextField extends StatelessWidget {
+  final String? Function(String?)? firstNameValidator;
+  final TextEditingController? firstNameController;
   final Function()? onComplete;
   final String label;
   final String? hint;
@@ -12,10 +12,10 @@ class UserNameTextField extends StatelessWidget {
   final TextStyle? labelStyle;
   final TextStyle? hintStyle;
 
-  const UserNameTextField({
+  const FirstNameTextField({
     required this.label,
-    this.userNameController,
-    this.userNameValidator,
+    this.firstNameController,
+    this.firstNameValidator,
     this.onComplete,
     this.hint,
     this.inputStyle,
@@ -27,8 +27,8 @@ class UserNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InputTextField(
-      controller: userNameController,
-      validator: userNameValidator,
+      controller: firstNameController,
+      validator: firstNameValidator,
       textInputType: TextInputType.text,
       inputBorder: const OutlineInputBorder(),
       labelText: label,

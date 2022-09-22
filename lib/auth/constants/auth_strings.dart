@@ -17,8 +17,10 @@ abstract class AuthStrings{
   static const String forgotPassword = "Forgot Password?";
   static const String doNotHaveAnAccountText = "Don't Have An Account?";
   static const String navigateToSignUpText = "Sign-Up";
-  static const String userNameTextFieldLabel = "User Name";
-  static const String userNameTextFieldHint = "John Doe";
+  static const String firstNameTextFieldLabel = "First Name";
+  static const String firstNameTextFieldHint = "John";
+  static const String lastNameTextFieldLabel = "Last Name";
+  static const String lastNameTextFieldHint = "Doe";
   static const String alreadyHaveAnAccountText = "Already Have An Account?";
   static const String forgotPasswordBottomSheetTitle = "Reset Your Password";
   static const String submit = "Submit";
@@ -28,7 +30,7 @@ abstract class AuthStrings{
   static const String otpBoxHint = "Enter 6 Digit Code";
   static const String resendCode = "Resend Code";
   static const String emailValidationErrorMessage = "Enter a valid email.";
-  static const String userNameValidationErrorMessage = "User name should contain at least 3 character";
+  static const String userNameValidationErrorMessage = "Name should contain at least 3 character";
   static const String passwordValidationErrorMessage = "Password length should be at least 8 character and should contain at least one upper-case,one lower-case,one digit and one special character.";
   static const String confirmPasswordValidationErrorMessage = "Confirm Password doesn't match";
 

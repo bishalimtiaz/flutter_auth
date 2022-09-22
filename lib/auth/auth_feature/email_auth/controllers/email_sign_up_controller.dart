@@ -7,7 +7,8 @@ import 'package:flutter_auth/auth/services/auth_service.dart';
 import 'package:flutter_auth/auth/services/email_auth_network_service.dart';
 
 class EmailSignUpController {
-  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController firstNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
@@ -32,12 +33,14 @@ class EmailSignUpController {
 
   void signUpWithEmailAndPassWord() {
     _setLoading();
-    String userName = userNameController.text.trim();
+    String firstName = firstNameController.text.trim();
+    String lastName = lastNameController. text.trim();
     String email = emailController.text.trim();
     String password = confirmPasswordController.text.trim();
 
     service.signUpWithEmailAndPassword(
-      userName: userName,
+      firstName: firstName,
+      lastName: lastName,
       email: email,
       password: password,
       onSuccess: ({
@@ -88,7 +91,8 @@ class EmailSignUpController {
 
   void disposeController() {
     pageStatus.dispose();
-    userNameController.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();

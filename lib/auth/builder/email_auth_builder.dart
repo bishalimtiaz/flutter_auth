@@ -54,9 +54,13 @@ class EmailAuthBuilder{
 
   TextStyle? get navigateToSignUpTextStyle => null;
 
-  String get userNameTextFieldLabel => AuthStrings.userNameTextFieldLabel;
+  String get firstNameTextFieldLabel => AuthStrings.firstNameTextFieldLabel;
 
-  String? get userNameTextFieldHint => AuthStrings.userNameTextFieldHint;
+  String? get firstNameTextFieldHint => AuthStrings.firstNameTextFieldHint;
+
+  String get lastNameTextFieldLabel => AuthStrings.lastNameTextFieldLabel;
+
+  String? get lastNameTextFieldHint => AuthStrings.lastNameTextFieldHint;
 
   String get alreadyHaveAnAccountText => AuthStrings.alreadyHaveAnAccountText;
 
@@ -101,7 +105,8 @@ class EmailAuthBuilder{
 
   String? passwordValidator(String? password)  => password == null || !AuthUtils.isValidPassword(password) ? AuthStrings.passwordValidationErrorMessage : null;
 
-  String? userNameValidator(String? userName)  => userName == null || userName.length < 3 ? AuthStrings.userNameValidationErrorMessage : null;
+  String? firstNameValidator(String? userName)  => userName == null || userName.length < 3 ? AuthStrings.userNameValidationErrorMessage : null;
+  String? lastNameValidator(String? userName)  => userName == null || userName.length < 3 ? AuthStrings.userNameValidationErrorMessage : null;
 
   String? get confirmPasswordValidationErrorMessage => AuthStrings.confirmPasswordValidationErrorMessage;
 

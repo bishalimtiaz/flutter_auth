@@ -10,9 +10,10 @@ import 'package:flutter_auth/auth/model/page_status.dart';
 import 'package:flutter_auth/auth/services/auth_service.dart';
 import 'package:flutter_auth/auth/widget/auth_button.dart';
 import 'package:flutter_auth/auth/widget/email_text_field.dart';
+import 'package:flutter_auth/auth/widget/last_name_text_field.dart';
 import 'package:flutter_auth/auth/widget/loader/loader.dart';
 import 'package:flutter_auth/auth/widget/password_text_field.dart';
-import 'package:flutter_auth/auth/widget/user_name_text_field.dart';
+import 'package:flutter_auth/auth/widget/first_name_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -67,14 +68,24 @@ class _SignUpViewState extends State<SignUpView> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              UserNameTextField(
-                userNameController: _controller.userNameController,
-                label: _builder.userNameTextFieldLabel,
-                hint: _builder.userNameTextFieldHint,
+              FirstNameTextField(
+                firstNameController: _controller.firstNameController,
+                label: _builder.firstNameTextFieldLabel,
+                hint: _builder.firstNameTextFieldHint,
                 inputStyle: _builder.inputStyle,
                 labelStyle: _builder.textFieldLabelTextStyle,
                 hintStyle: _builder.textFieldHintTExtStyle,
-                userNameValidator: _builder.userNameValidator,
+                firstNameValidator: _builder.firstNameValidator,
+              ),
+              SizedBox(height: AuthValues.margin_16.h),
+              LastNameTextField(
+                lastNameController: _controller.lastNameController,
+                label: _builder.lastNameTextFieldLabel,
+                hint: _builder.lastNameTextFieldHint,
+                inputStyle: _builder.inputStyle,
+                labelStyle: _builder.textFieldLabelTextStyle,
+                hintStyle: _builder.textFieldHintTExtStyle,
+                lastNameValidator: _builder.lastNameValidator,
               ),
               SizedBox(height: AuthValues.margin_16.h),
               EmailTextField(

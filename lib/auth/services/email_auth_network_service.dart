@@ -9,7 +9,8 @@ abstract class EmailAuthNetworkService {
   });
 
   Future<void> signUpWithEmailAndPassword({
-    required String userName,
+    required String firstName,
+    required String lastName,
     required String email,
     required String password,
     required Function({String? accessToken,UserInfo? userInfo,String? successMessage}) onSuccess,
