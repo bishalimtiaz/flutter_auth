@@ -200,7 +200,7 @@ class _OTPBottomSheetState extends State<OTPBottomSheet> {
     Fluttertoast.showToast(
       msg: message,
       toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
+      gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
       backgroundColor: isError ? Colors.red : null,
       textColor: isError ? Colors.white : null,
