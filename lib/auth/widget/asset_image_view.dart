@@ -41,6 +41,7 @@ class AssetImageView extends StatelessWidget {
           height: height,
           width: width,
           color: color,
+          package: 'flutter_auth',
         );
       case "png":
       case "jpg":
@@ -51,6 +52,7 @@ class AssetImageView extends StatelessWidget {
           width: width,
           color: color,
           scale: scale,
+          package: 'flutter_auth',
         );
       default:
         return Icon(
