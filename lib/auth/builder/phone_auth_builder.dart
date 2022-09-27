@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/auth/constants/auth_assets.dart';
 import 'package:flutter_auth/auth/constants/auth_colors.dart';
 import 'package:flutter_auth/auth/constants/auth_strings.dart';
 import 'package:flutter_auth/auth/constants/auth_values.dart';
@@ -9,7 +8,8 @@ class PhoneAuthBuilder {
   Color get authButtonColor => AuthColors.phoneButtonColor;
 
   /// Defines the path of the icon of PhoneAuthButton
-  String get authButtonIconPath => AuthAssets.PHONE_ICON;
+  /// If [authButtonIconPath] is empty it uses default icon, if null it doesn't render the icon
+  String? get authButtonIconPath => "";
 
   /// Defines the color of the icon of PhoneAuthButton
   Color? get authButtonIconColor => null;

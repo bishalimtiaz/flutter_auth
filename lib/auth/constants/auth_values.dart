@@ -9,6 +9,8 @@ abstract class AuthValues {
   static const double margin_6 = 6;
   static const double margin_8 = 8;
   static const double margin_32 = 32;
+  static const double margin_48 = 48;
+  static const double margin_60 = 60;
   static const double radius_16 = 16;
   static const double iconDefaultSize = 24;
   static const double fontSize_16 = 16;

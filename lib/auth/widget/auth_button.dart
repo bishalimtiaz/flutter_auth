@@ -11,6 +11,7 @@ class AuthButton extends StatelessWidget {
   final Color? buttonIconColor;
   final TextStyle? buttonTitleStyle;
   final Function()? onTap;
+  final bool useDefaultAsset;
 
   const AuthButton({
     required this.buttonTitle,
@@ -19,6 +20,7 @@ class AuthButton extends StatelessWidget {
     this.buttonIconColor,
     this.iconPath,
     this.buttonTitleStyle,
+    this.useDefaultAsset = true,
     Key? key,
   }) : super(key: key);
 
@@ -46,10 +48,11 @@ class AuthButton extends StatelessWidget {
     return Row(
       children: [
         AssetImageView(
-          fileName: iconPath ?? "",
+          assetPath: iconPath ?? "",
           height: AuthValues.iconDefaultSize.sp,
           width: AuthValues.iconDefaultSize.sp,
           color: buttonIconColor,
+          isDefault: useDefaultAsset,
         ),
         SizedBox(
           width: AuthValues.margin_16.w,

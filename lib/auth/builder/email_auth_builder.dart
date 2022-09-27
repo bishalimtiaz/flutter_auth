@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/auth/constants/auth_assets.dart';
 import 'package:flutter_auth/auth/constants/auth_colors.dart';
 import 'package:flutter_auth/auth/constants/auth_strings.dart';
 import 'package:flutter_auth/auth/utils/auth_utils.dart';
@@ -9,7 +8,8 @@ class EmailAuthBuilder{
   Color get authButtonColor => AuthColors.emailButtonColor;
 
   /// Defines the path of the icon of EmailAuthButton
-  String get authButtonIconPath => AuthAssets.EMAIL_ICON;
+  /// If [authButtonIconPath] is empty it uses default icon, if null it doesn't render the icon
+  String? get authButtonIconPath => "";
 
   /// Defines the color of the icon of EmailAuthButton
   Color? get authButtonIconColor => null;

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/auth/auth_feature/email_auth/views/email_auth_view.dart';
 import 'package:flutter_auth/auth/auth_feature/phone_auth/views/phone_auth_view.dart';
+import 'package:flutter_auth/auth/builder/logo_builder.dart';
 import 'package:flutter_auth/auth/constants/auth_values.dart';
 import 'package:flutter_auth/auth/constants/enums.dart';
 import 'package:flutter_auth/auth/services/auth_service.dart';
+import 'package:flutter_auth/auth/widget/asset_image_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'email_auth_button.dart';
 import 'facebook_auth_button.dart';
@@ -33,13 +35,9 @@ class AuthUI extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          for (int i = 0;
-              i < AuthService.authBuilder.authOptions.length;
-              i++) ...[
-            _buildAuthUI(AuthService.authBuilder.authOptions[i], context),
-            if (i != AuthService.authBuilder.authOptions.length - 1)
-              SizedBox(height: AuthValues.margin_16.h),
-          ]
+          if (AuthService.authBuilder.logoBuilder != null)
+            _getLogo(AuthService.authBuilder.logoBuilder!),
+          _getAuthButtons(context)
         ],
       ),
     );
@@ -73,6 +71,35 @@ class AuthUI extends StatelessWidget {
           },
         );
     }
+  }
+
+  Widget _getLogo(LogoBuilder logoBuilder) {
+    return Container(
+      margin: EdgeInsets.only(bottom: AuthValues.margin_60.h),
+      child: AssetImageView(
+        isDefault: false,
+        assetPath: logoBuilder.logoPath,
+        height: logoBuilder.logoHeight,
+        width: logoBuilder.logoWidth,
+        fit: logoBuilder.fit,
+      ),
+    );
+  }
+
+  Widget _getAuthButtons(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        for (int i = 0;
+            i < AuthService.authBuilder.authOptions.length;
+            i++) ...[
+          _buildAuthUI(AuthService.authBuilder.authOptions[i], context),
+          if (i != AuthService.authBuilder.authOptions.length - 1)
+            SizedBox(height: AuthValues.margin_16.h),
+        ],
+      ],
+    );
   }
 
   //ignore: no-empty-block

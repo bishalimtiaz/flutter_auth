@@ -1,3 +1,4 @@
+import 'package:flutter_auth/auth/builder/logo_builder.dart';
 import 'package:flutter_auth/auth/services/email_auth_network_service.dart';
 import 'package:flutter_auth/auth/services/phone_auth_network_service.dart';
 import 'package:flutter_auth/auth/builder/email_auth_builder.dart';
@@ -13,6 +14,7 @@ class AuthBuilder {
   late final EmailAuthBuilder emailAuthBuilder;
   late final PhoneAuthNetworkService phoneAuthNetworkService;
   late final EmailAuthNetworkService emailAuthNetworkService;
+  LogoBuilder? logoBuilder;
 
   AuthBuilder enablePhoneAuth({
     PhoneAuthBuilder? phoneAuthBuilder,
@@ -33,6 +35,11 @@ class AuthBuilder {
     this.emailAuthBuilder = emailAuthBuilder ?? EmailAuthBuilder();
     this.emailAuthNetworkService = emailAuthNetworkService;
 
+    return this;
+  }
+
+  AuthBuilder setLogo({required LogoBuilder logoBuilder}) {
+    this.logoBuilder = logoBuilder;
     return this;
   }
 }
